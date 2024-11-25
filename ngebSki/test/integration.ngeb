@@ -1,0 +1,121 @@
+a = 0ski
+b = 10ski
+sum = 0ski
+product = 1ski
+factorial = 1ski
+max_num = 0ski
+
+while a <= b do
+    sum = sum + a ski
+    a = a ++ ski
+end
+ngeb(sum)ski
+
+i = 1ski
+while i <= 10 do
+    product = product * i ski
+    i = i ++ ski
+end
+ngeb(product)ski
+
+num = 15ski
+is_even = false ski
+if num - (num / 2 * 2) == 0 then
+    is_even = true ski
+else
+    is_even = false ski
+end
+ngeb(is_even)ski
+
+n = 5ski
+i = 1ski
+while i <= n do
+    factorial = factorial * i ski
+    i = i ++ ski
+end
+ngeb(factorial)ski
+
+i = 0ski
+current_num = 3ski
+max_num = current_num ski
+i = i ++ ski
+current_num = 5ski
+if current_num > max_num then
+    max_num = current_num ski
+end
+i = i ++ ski
+current_num = 1ski
+if current_num > max_num then
+    max_num = current_num ski
+end
+i = i ++ ski
+current_num = 8ski
+if current_num > max_num then
+    max_num = current_num ski
+end
+i = i ++ ski
+current_num = 7ski
+if current_num > max_num then
+    max_num = current_num ski
+end
+i = i ++ ski
+current_num = 2ski
+if current_num > max_num then
+    max_num = current_num ski
+end
+ngeb(max_num)ski
+
+i = 0ski
+sum_squares = 0ski
+while i < 10 do
+    sum_squares = sum_squares + i * i ski
+    i = i ++ ski
+end
+ngeb(sum_squares)ski
+
+x = 5ski
+y = 10ski
+z = 15ski
+result = false ski
+
+if x < y then
+    result = true ski
+else
+    result = false ski
+end
+
+if y >= z then
+    result = false ski
+else
+    result = true ski
+end
+ngeb(result)ski
+
+i = 1ski
+total = 0ski
+while i <= 10 do
+    if i - (i / 2 * 2) == 0 then
+        total = total + i ski
+    else
+        total = total - i ski
+    end
+    i = i ++ ski
+end
+ngeb(total)ski
+
+counter = 0ski
+n = 10ski
+sum_even = 0ski
+sum_odd = 0ski
+
+while counter <= n do
+    if counter - (counter / 2 * 2) == 0 then
+        sum_even = sum_even + counter ski
+    else
+        sum_odd = sum_odd + counter ski
+    end
+    counter = counter ++ ski
+end
+
+ngeb(sum_even)ski
+ngeb(sum_odd)ski

@@ -1,0 +1,44 @@
+a = -10.5;
+b = 20.75;
+c = -30.125;
+d = 40.5;
+e = 50.875;
+f = -60.25;
+g = 70.875;
+h = -80.125;
+i = 15.5;
+j = -25.75;
+
+result1 = ((a - b * c + d) / (e - f) + g) * h - i;
+result2 = (a / b + c * d - e) * (f - g + h / i);
+result3 = ((a - b) * (c + d) / (e - f)) + (g / h);
+result4 = (a * b + c) / (d - e) + (f * g) - h;
+result5 = ((a + b) / c * (d - e) + f) * (g + h) - i;
+
+result6 = (a / b - c * d + e) * (f / g + h) / (i - j);
+result7 = (a - b) / (c + (d * e) - f) + g - h * i;
+result8 = ((b * c) - (d / e) + (f * g) - h) * (i / j);
+result9 = (a + b - c) * (d / e + f - g) - (h / i);
+result10 = ((a / b * c) - (d + e) * f) / (g - h) + i;
+
+complex_result1 = ((a - b) * (c + d) / (e - f) + (g / h) * i) - j;
+complex_result2 = ((a * b - c + d) / e * (f - g)) + (h / i) - j;
+complex_result3 = ((a + b) - (c / d) * (e + f - g) / h) * i + j;
+complex_result4 = (a * (b - c) + (d / e) * f - (g + h) / i) + j;
+complex_result5 = ((a - b) * (c + d) - (e / f) + (g * h) / i) - j;
+
+ngeb(result1)ski
+ngeb(result2)ski
+ngeb(result3)ski
+ngeb(result4)ski
+ngeb(result5)ski
+ngeb(result6)ski
+ngeb(result7)ski
+ngeb(result8)ski
+ngeb(result9)ski
+ngeb(result10)ski
+ngeb(complex_result1)ski
+ngeb(complex_result2)ski
+ngeb(complex_result3)ski
+ngeb(complex_result4)ski
+ngeb(complex_result5)ski

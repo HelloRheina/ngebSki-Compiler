@@ -1,0 +1,44 @@
+x = true;
+y = false;
+
+result1 = x and y;
+result2 = x or y;
+result3 = not x;
+result4 = not y;
+
+ngeb(result1)ski
+ngeb(result2)ski
+ngeb(result3)ski
+ngeb(result4)ski
+
+a = 10;
+b = 20;
+condition1 = a > b;
+condition2 = a < b;
+condition3 = a == b;
+
+if condition1 then
+    ngeb("a is greater than b\n")ski
+else
+    ngeb("a is not greater than b\n")ski
+end
+
+if condition2 then
+    ngeb("a is less than b\n")ski
+else
+    ngeb("a is not less than b\n")ski
+end
+
+if condition3 then
+    ngeb("a is equal to b\n")ski
+else
+    ngeb("a is not equal to b\n")ski
+end
+
+complex_condition1 = (a < b) and (a != b) or (b == 20);
+complex_condition2 = not ((a + b) > (b - a));
+complex_condition3 = (a == 10) and ((b > a) or (a < 5));
+
+ngeb(complex_condition1)ski
+ngeb(complex_condition2)ski
+ngeb(complex_condition3)ski

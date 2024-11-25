@@ -1,0 +1,78 @@
+a = 5;
+b = 10;
+c = -15;
+d = 20;
+e = 25;
+f = -30;
+g = 35;
+h = -40;
+i = 45;
+j = -50;
+k = 55;
+l = -60;
+m = 65;
+n = -70;
+o = 75;
+
+result1 = 0;
+while a <= 50 do
+    result1 = result1 + a * b - c / d + e;
+    a = a + 5;
+end
+
+result2 = 1;
+while b >= -50 do
+    result2 = result2 * (f / g + h - i * j);
+    b = b - 10;
+end
+
+result3 = 0;
+while c < 0 do
+    result3 = result3 + (k + l) / m - n * o;
+    c = c + 5;
+end
+
+result4 = 1000;
+while d > 0 do
+    result4 = result4 - (a + b) * (c - d) / e + f;
+    d = d - 10;
+end
+
+result5 = 0;
+while e < 100 do
+    result5 = result5 + (g / h) - (i * j) + k;
+    e = e + 15;
+end
+
+result6 = 0;
+while f < -10 do
+    result6 = result6 + (l - m) / (n + o) * a;
+    f = f + 5;
+end
+
+
+
+
+
+
+ngeb("result1 : \n")ski
+ngeb(result1)ski
+
+ngeb("result2 : \n")ski
+ngeb(result2)ski
+
+ngeb("result3 : \n")ski
+ngeb(result3)ski
+
+ngeb("result4 : \n")ski
+ngeb(result4)ski
+
+ngeb("result5 : \n")ski
+ngeb(result5)ski
+
+ngeb("result6 : \n")ski
+ngeb(result6)ski
+
+
+
+

@@ -1,0 +1,29 @@
+x = 42;
+y = 3.14;
+z = "test string";
+w = true;
+a = false;
+
+temp1 = x + y;
+temp2 = x - y;
+temp3 = x * y;
+temp4 = x / y;
+
+bool_and = w and a;
+bool_or = w or a;
+bool_not_w = not w;
+bool_not_a = not a;
+
+ngeb(x)ski
+ngeb(y)ski
+ngeb(z)ski
+ngeb(w)ski
+ngeb(a)ski
+ngeb(temp1)ski
+ngeb(temp2)ski
+ngeb(temp3)ski
+ngeb(temp4)ski
+ngeb(bool_and)ski
+ngeb(bool_or)ski
+ngeb(bool_not_w)ski
+ngeb(bool_not_a)ski

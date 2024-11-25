@@ -1,0 +1,50 @@
+x = 42;
+y = 100;
+z = 150;
+
+if x >= 40 and y < 200 then
+    if z > 100 then
+        ngeb("Condition 1 True, Nested Condition True\n")ski
+    else
+        ngeb("Condition 1 True, Nested Condition False\n")ski
+    end
+else
+    ngeb("Condition 1 False\n")ski
+end
+
+if x < 40 or y > 200 then
+    ngeb("Condition 2 True\n")ski
+else
+    if z == 150 then
+        ngeb("Condition 2 False, Nested Condition True\n")ski
+    else
+        ngeb("Condition 2 False, Nested Condition False\n")ski
+    end
+end
+
+if x == 42 then
+    if y == 100 then
+        if z == 150 then
+            ngeb("All conditions are True\n")ski
+        end
+    end
+end
+
+a = 10;
+b = 20;
+c = 30;
+d = 40;
+
+if a < b then
+    if c > d then
+        ngeb("a < b and c > d\n")ski
+    else
+        ngeb("a < b and c <= d\n")ski
+    end
+else
+    if c > d then
+        ngeb("a >= b and c > d\n")ski
+    else
+        ngeb("a >= b and c <= d\n")ski
+    end
+end

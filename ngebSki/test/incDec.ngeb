@@ -1,0 +1,42 @@
+x = 10;
+x = x++;
+ngeb(x)ski
+x = x--;
+ngeb(x)ski
+
+y = 5;
+y = y + 1;
+ngeb(y)ski
+y = y - 1;
+ngeb(y)ski
+
+a = 100;
+b = 200;
+
+while a < b do
+    ngeb(a)ski
+    a = a++;
+end
+
+while b > a do
+    ngeb(b)ski
+    b = b--;
+end
+
+p = 50;
+q = 50;
+p = p++;
+q = q--;
+ngeb(p)ski
+ngeb(q)ski
+
+nested_inc = 0;
+nested_dec = 100;
+while nested_inc < 10 do
+    ngeb(nested_inc)ski
+    nested_inc = nested_inc++;
+    while nested_dec > 90 do
+        ngeb(nested_dec)ski
+        nested_dec = nested_dec--;
+    end
+end

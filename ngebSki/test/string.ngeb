@@ -1,0 +1,82 @@
+x = 42;
+y = 100;
+z = 150;
+
+if x >= 40 and y < 200 then
+    if z > 100 then
+        ngeb("Condition 1 True, Nested Condition True\n")ski
+    else
+        ngeb("Condition 1 True, Nested Condition False\n")ski
+    end
+else
+    ngeb("Condition 1 False\n")ski
+end
+
+if x < 40 or y > 200 then
+    ngeb("Condition 2 True\n")ski
+else
+    if z == 150 then
+        ngeb("Condition 2 False, Nested Condition True\n")ski
+    else
+        ngeb("Condition 2 False, Nested Condition False\n")ski
+    end
+end
+
+if x == 42 then
+    if y == 100 then
+        if z == 150 then
+            ngeb("All conditions are True\n")ski
+        end
+    end
+end
+
+x_bool = true;
+y_bool = false;
+
+result1 = x_bool and y_bool;
+result2 = x_bool or y_bool;
+result3 = not x_bool;
+result4 = not y_bool;
+
+ngeb("Result of x_bool and y_bool: ")ski
+ngeb(result1)ski
+ngeb("Result of x_bool or y_bool: ")ski
+ngeb(result2)ski
+ngeb("Result of not x_bool: ")ski
+ngeb(result3)ski
+ngeb("Result of not y_bool: ")ski
+
+a = 10;
+b = 20;
+condition1 = a > b;
+condition2 = a < b;
+condition3 = a == b;
+
+if condition1 then
+    ngeb("a is greater than b\n")ski
+else
+    ngeb("a is not greater than b\n")ski
+end
+
+if condition2 then
+    ngeb("a is less than b\n")ski
+else
+    ngeb("a is not less than b\n")ski
+end
+
+if condition3 then
+    ngeb("a is equal to b\n")ski
+else
+    ngeb("a is not equal to b\n")ski
+end
+
+complex_condition1 = (a < b) and (a != b) or (b == 20);
+complex_condition2 = not ((a + b) > (b - a));
+complex_condition3 = (a == 10) and ((b > a) or (a < 5));
+
+ngeb("Complex condition 1: ")ski
+ngeb(complex_condition1)ski
+ngeb("Complex condition 2: ")ski
+ngeb(complex_condition2)ski
+ngeb("Complex condition 3: ")ski
+ngeb(complex_condition3)ski

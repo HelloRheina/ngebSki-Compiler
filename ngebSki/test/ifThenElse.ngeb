@@ -1,0 +1,115 @@
+a = 5;
+b = 10;
+c = -15;
+d = 20;
+e = 25;
+f = -30;
+g = 35;
+h = -40;
+i = 45;
+j = -50;
+k = 55;
+l = -60;
+m = 65;
+n = -70;
+o = 75;
+
+result1 = 0;
+if a < b then
+    result1 = a + b;
+else
+    result1 = a - b;
+end
+
+result2 = 0;
+if c < 0 then
+    result2 = c + d;
+else
+    result2 = c - d;
+end
+
+result3 = 0;
+if e > f then
+    result3 = e * f;
+else
+    result3 = e / f;
+end
+
+result4 = 0;
+if g < h then
+    result4 = g + h;
+else
+    result4 = g - h;
+end
+
+result5 = 0;
+if i > j then
+    result5 = i * j;
+else
+    result5 = i / j;
+end
+
+result6 = 0;
+if k > l then
+    result6 = k - l;
+else
+    result6 = k + l;
+end
+
+result7 = 0;
+if m < n then
+    result7 = m + n;
+else
+    result7 = m - n;
+end
+
+result8 = 0;
+if o > a then
+    result8 = o - a;
+else
+    result8 = o + a;
+end
+
+result9 = 0;
+if a > 0 and b > 0 then
+    result9 = a * b;
+else
+    result9 = a / b;
+end
+
+result10 = 0;
+if c < 0 or d < 0 then
+    result10 = c + d;
+else
+    result10 = c - d;
+end
+
+ngeb("result1 : \n")ski
+ngeb(result1)ski
+
+ngeb("result2 : \n")ski
+ngeb(result2)ski
+
+ngeb("result3 : \n")ski
+ngeb(result3)ski
+
+ngeb("result4 : \n")ski
+ngeb(result4)ski
+
+ngeb("result5 : \n")ski
+ngeb(result5)ski
+
+ngeb("result6 : \n")ski
+ngeb(result6)ski
+
+ngeb("result7 : \n")ski
+ngeb(result7)ski
+
+ngeb("result8 : \n")ski
+ngeb(result8)ski
+
+ngeb("result9 : \n")ski
+ngeb(result9)ski
+
+ngeb("result10 : \n")ski
+ngeb(result10)ski

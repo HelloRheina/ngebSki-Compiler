@@ -1,0 +1,17 @@
+<program> ::= <statement_list>
+<statement_list> ::= <statement> | <statement_list> <statement>
+<statement> ::= <assign> | <print> | <if_statement> | <while_statement>
+<assign> ::= <ID> "=" <expression> ";" | <ID> "=" <ID> "++" ";" | <ID> "=" <ID> "--" ";"
+<print> ::= "ngeb" "(" <expression> ")" "ski"
+<if_statement> ::= "if" <condition> "then" <statement_list> "else" <statement_list> "end"
+<while_statement> ::= "while" <condition> "do" <statement_list> "end"
+<condition> ::= <expression> ("==" | "!=" | "<" | ">" | "<=" | ">=") <expression> | <boolean_expression>
+<boolean_expression> ::= <boolean_expression> "&&" <boolean_term> | <boolean_expression> "||" <boolean_term> | <boolean_term>
+<boolean_term> ::= "!" <boolean_term> | <term>
+<expression> ::= <expression> "+" <term> | <expression> "-" <term> | <term>
+<term> ::= <term> "*" <factor> | <term> "/" <factor> | <factor>
+<factor> ::= <INTEGER> | <FLOAT> | <LONG> | <SHORT> | <ID> | "(" <expression> ")" | "true" | "false" | <STRING_LITERAL>
+<ID> ::= <letter> <id_tail>*
+<letter> ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" | "_"
+<id_tail> ::= <letter> | <digit> | "_"
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
