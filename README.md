@@ -62,7 +62,8 @@ Includes sample programs like:
 
 **Libraries:**  
 - `rply`  
-- `llvm`  
+- `llvm`
+- `llc`  
 
 ---
 
@@ -87,8 +88,13 @@ Includes sample programs like:
    python main.py
    ./test/arithmetic1
    #ngob.ll generated
-   python compile.py
-   #
+   python compileWin.py
+   #There are two files with different OS, choose the compile file based on your OS
+   obj
+   #We provide assembly code generator (asm) and object generator (obj)
+   ./ngob
+   #Run the executable
+   #For one click compile and run, execution[OS].py is provided
    
    
 
@@ -104,11 +110,6 @@ The Ngebski compiler comes with built-in test cases to ensure reliability and ha
 - **Loops:** `while.ngeb`  
 - **Integrated Programs:** `integration.ngeb`  
 
-Run test cases like this:  
-```bash
-python ngebski_compiler.py test_cases/arithmetic1.ngeb
-```
-
 ## 🤔 FAQs
 ** What does "Ngebski" mean? **
 It’s inspired by the Indonesian slang word "ngeb", meaning friendly or approachable. 
@@ -122,7 +123,7 @@ Yes, we support both Windows and macOS !!
 
 ## ✨ Language description and test cases
 - Please check **ngebBuild.txt** for more information. We use BNF notation to define the grammar and lexical model to describe the control flow. The build also describe the parser, lexer, AST, intermediate code generator, compile and execution.
-- Please check **testCases.txt** for information regarding test cases usage.
+- Please check **testCases.pdf** for information regarding test cases usage.
 - Please check **performanceAnalysis.txt** for information surrounding performance analysis and error handling.
 
 ## Compiler architecture
