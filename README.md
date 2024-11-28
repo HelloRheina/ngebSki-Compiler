@@ -1,4 +1,4 @@
-# 🖥️ Ngebski Programming Language Compiler (NgebLang) 🌟  
+# 🖥️ Ngebski Programming Language and Compiler🌟  
 
 **_"Ngeb"_** is an Indonesian slang word for addressing friends, and that's what the Ngebski language aims to be: your friendly, user-focused programming language. Blending elements of **C** and **Python**. This is a project from our compiler principles class. We decided to make it fun by using some slang keywords.
 
@@ -62,7 +62,8 @@ Includes sample programs like:
 
 **Libraries:**  
 - `rply`  
-- `llvm`  
+- `llvm`
+- `llc`  
 
 ---
 
@@ -70,17 +71,32 @@ Includes sample programs like:
 
 1. Clone this repo:  
    ```bash  
-   git clone https://github.com/your-username/NgebskiCompiler.git
+   git clone https://github.com/HelloRheina/NgebskiCompiler
 
 2. Navigate to the project directory:  
    ```bash
    cd NgebskiCompiler
-3. Install the requirements
+3. Set up virtual environment and Install the requirements
    ```bash
+   conda create --name ngebski python=3.12
+   conda activate ngebski
    pip install -r requirements.txt
 4. Compile and run your first Ngebski program:
    ```bash
-   python ngebski_compiler.py path/to/your_program.ngeb
+   Sample: (terminal entry by line)
+   cd ngebSki
+   python main.py
+   ./test/arithmetic1
+   #ngob.ll generated
+   python compileWin.py
+   #There are two files with different OS, choose the compile file based on your OS
+   obj
+   #We provide assembly code generator (asm) and object generator (obj)
+   ./ngob
+   #Run the executable
+   #For one click compile and run, execution[OS].py is provided
+   
+   
 
 ## 🧪 Test Cases  
 
@@ -93,11 +109,6 @@ The Ngebski compiler comes with built-in test cases to ensure reliability and ha
 - **Variable Operations:** `variable.ngeb`  
 - **Loops:** `while.ngeb`  
 - **Integrated Programs:** `integration.ngeb`  
-
-Run test cases like this:  
-```bash
-python ngebski_compiler.py test_cases/arithmetic1.ngeb
-```
 
 ## 🤔 FAQs
 ** What does "Ngebski" mean? **
@@ -112,8 +123,8 @@ Yes, we support both Windows and macOS !!
 
 ## ✨ Language description and test cases
 - Please check **ngebBuild.txt** for more information. We use BNF notation to define the grammar and lexical model to describe the control flow. The build also describe the parser, lexer, AST, intermediate code generator, compile and execution.
-- Please check **testCases.txt** for information regarding test cases usage.
-- Please check **performanceAnalysis.txt** for information surrounding performance analysis and error handling.
+- Please check **testCases.pdf** for information regarding test cases usage.
+- Please check **performanceAnalysis.pdf** for information surrounding performance analysis and error handling.
 
 ## Compiler architecture
 ![compiler_architecture](https://github.com/user-attachments/assets/e27de7f0-6a69-47ae-a1b0-28ef55de3c73)

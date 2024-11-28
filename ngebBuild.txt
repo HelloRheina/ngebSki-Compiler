@@ -1,0 +1,182 @@
+A. BNF Grammar
+program        ::= statement_list
+statement_list ::= statement | statement_list statement
+statement      ::= assign | print | if_statement | while_statement
+assign         ::= ID "=" expression ";" | ID "=" ID "++" ";" | ID "=" ID "--" ";"
+print          ::= "ngeb" "(" expression ")" "ski"
+if_statement   ::= "if" condition "then" statement_list "else" statement_list "end"
+while_statement ::= "while" condition "do" statement_list "end"
+condition      ::= expression comp_operator expression | boolean_expression
+comp_operator  ::= "==" | "!=" | "<" | ">" | "<=" | ">="
+boolean_expression ::= boolean_expression "&&" boolean_term | boolean_expression "||" boolean_term | boolean_term
+boolean_term   ::= "!" boolean_term | term
+expression     ::= expression "+" term | expression "-" term | term
+term           ::= term "*" factor | term "/" factor | factor
+factor         ::= INTEGER | FLOAT | LONG | SHORT | ID | "(" expression ")" | "true" | "false" | STRING_LITERAL
+ID             ::= letter id_tail*
+letter         ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" | "_"
+id_tail        ::= letter | digit | "_"
+digit          ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+B. Lexical model
+Control Flow:
+IF for "if" statements.
+THEN for "then" statements.
+ELSE for "else" statements.
+END for "end" statements.
+WHILE for "while" loops.
+DO for "do" statements.
+Print:
+PRINT for the "ngeb" print function.
+Data Types
+FLOAT for floating-point numbers (e.g., -123.45).
+LONG for long integers (e.g., 1234567890).
+INTEGER for integers (e.g., 123).
+SHORT for short integers (e.g., 123).
+Boolean Literals
+TRUE for the boolean literal true.
+FALSE for the boolean literal false.
+Boolean Operators
+AND for logical and (and).
+OR for logical or (or).
+NOT for logical not (not).
+Comparison Operators
+EQ for equality (==).
+NEQ for inequality (!=).
+LEQ for less than or equal (<=).
+GEQ for greater than or equal (>=).
+LT for less than (<).
+GT for greater than (>).
+Parentheses
+OPEN_PAREN for opening parenthesis (().
+CLOSE_PAREN for closing parenthesis ()).
+Symbols
+SEMI_COLON for the statement terminator (ski).
+Increment and Decrement
+INCREMENT for incrementing (++).
+DECREMENT for decrementing (--).
+Arithmetic Operators
+SUM for addition (+).
+SUB for subtraction (-).
+MUL for multiplication (*).
+DIV for division (/).
+Identifier
+ID for identifiers, which include variable names (e.g., my_var).
+Assignment
+EQUALS for assignment operator (=).
+String Literal
+STRING_LITERAL for string values (e.g., "hello ngeb").
+Ignored Characters
+Whitespace: The lexer ignores spaces, tabs, and other whitespace characters.
+
+
+C. Lexer (lexx.py)
+1. Define a class Lexx:
+   - Initialize the class with a LexerGenerator object.
+2. Inside Lexx class:
+   - Define a method _add_tokens():
+     - Add tokens to the lexer using self.lexer.add().
+     - Tokens are added in the form (token_name, regex_pattern).
+     - Each token represents a lexical element of the programming language.
+3. Tokens added include:
+   - Keywords and control flow: IF, THEN, ELSE, END, WHILE, DO.
+   - Number types: FLOAT, LONG, INTEGER, SHORT.
+   - Boolean literals: TRUE, FALSE.
+   - Boolean operators: AND, OR, NOT.
+   - Print statement: PRINT.
+   - Comparison operators: EQ (==), NEQ (!=), LEQ (<=), GEQ (>=), LT (<), GT (>).
+   - Parentheses: OPEN_PAREN, CLOSE_PAREN.
+   - Semicolon: SEMI_COLON.
+   - Increment and decrement: INCREMENT (++), DECREMENT (--).
+   - Arithmetic operators: SUM (+), SUB (-), MUL (*), DIV (/).
+   - Identifier (variable names): ID.
+   - Assignment operator: EQUALS (=).
+   - String literal: STRING_LITERAL.
+   - Ignore whitespace characters using self.lexer.ignore().
+4. Define a method get_lexer():
+   - Call _add_tokens() to populate the lexer with defined tokens.
+   - Build and return the lexer using self.lexer.build().
+5. End of Lexx class definition.
+6. Instantiate Lexx class to create a lexer object.
+7. Use get_lexer() method to obtain the lexer for tokenizing input code.
+8. The lexer created can tokenize input code according to the defined tokens,
+   identifying keywords, numbers, operators, identifiers, and literals,
+   while ignoring whitespace.
+
+
+
+D. Parser (parser.py)
+Import necessary classes from libraries: ParserGenerator and AST nodes (Number, Sum, Sub, Mul, Div, Print, Assign, Variable, Condition, IfThenElse, While, Boolean, BooleanOp, BooleanNot, Inc, Dec, StringLiteral).
+Define a class Parser:
+ Constructor `__init__(self, module, builder, printf)`:
+ Initialize a ParserGenerator `pg` with predefined tokens and operator precedence.
+ Store references to `module`, `builder`, `printf`, and initialize an empty `variables` dictionary.
+  Method `parse(self)`:
+- `program : statement_list`: Defines the top-level production for the program, consisting of a list of statements.
+- `statement_list : statement_list statement` and `statement_list : statement`: Handles recursive lists of statements within the program.
+- `statement : PRINT OPEN_PAREN expression CLOSE_PAREN SEMI_COLON`: Handles the statement for printing expressions.
+- `statement : assign`, `statement : if_statement`, `statement : while_statement`, `statement : expression SEMI_COLON`: Handles different types of statements including assignments, if-then-else, while loops, and standalone expressions.
+- `assign : ID EQUALS expression SEMI_COLON`, `assign : ID EQUALS boolean_expression SEMI_COLON`, `assign : ID EQUALS ID INCREMENT SEMI_COLON`, `assign : ID EQUALS ID DECREMENT SEMI_COLON`: Handles various forms of assignment statements.
+- `if_statement : IF condition THEN statement_list optional_else END`: Handles if-then-else statements including optional else parts.
+- `optional_else : ELSE statement_list`, `optional_else : `: Handles the optional else part of if-then-else statements.
+- `while_statement : WHILE condition DO statement_list END`: Handles while loop statements.
+- `condition : boolean_expression`: Handles conditions used in if and while statements.
+- `boolean_expression : boolean_expression AND boolean_expression`, `boolean_expression : boolean_expression OR boolean_expression`, `boolean_expression : comparison`, `boolean_expression : term`: Handles boolean expressions and their precedence.
+- `comparison : expression EQ expression`, `comparison : expression NEQ expression`, `comparison : expression LT expression`, `comparison : expression GT expression`, `comparison : expression LEQ expression`, `comparison : expression GEQ expression`: Handles comparison operations between expressions.
+- `expression : expression SUM term`, `expression : expression SUB term`, `expression : term`: Handles arithmetic expressions including addition, subtraction, and unary operators.
+- `expression : boolean_expression`, `expression : NOT expression`, `expression : SUB term`, `expression : SUM term`: Handles boolean expressions and their unary operators.
+- `term : term MUL factor`, `term : term DIV factor`, `term : factor`: Handles multiplication and division operations within expressions.
+- `term : factor`: Handles factors such as literals, identifiers, and parenthesized expressions within expressions.
+- `factor : INTEGER`, `factor : FLOAT`, `factor : LONG`, `factor : SHORT`, `factor : ID`, `factor : OPEN_PAREN expression CLOSE_PAREN`, `factor : TRUE`, `factor : FALSE`, `factor : STRING_LITERAL`: Handles different types of factors that can appear in expressions.
+- `error_handle(token)`: Handles syntax errors during parsing and error reporting.
+    Method `get_parser(self)`:
+        Build and return the parser using `self.pg.build()`.
+
+E. AST (astree.py)
+Number: Represents numeric literals in the AST, evaluating to LLVM IR constants based on their type (integer or float).
+StringLiteral: Handles string literals, converting them to LLVM IR global variables with appropriate formatting and handling null termination.
+BinaryOp: Base class for binary operations (Sum, Sub, Mul, Div), ensuring operands are converted to the same type before performing operations.
+Sum: Performs addition operation between two operands, handling type conversions and generating LLVM IR.
+Sub: Performs subtraction operation between two operands, handling type conversions and generating LLVM IR.
+Mul: Performs multiplication operation between two operands, handling type conversions and generating LLVM IR.
+Div: Performs division operation between two operands, handling type conversions and generating LLVM IR.
+UnaryOp: Base class for unary operations (Inc, Dec), allowing increment and decrement operations on variables, updating LLVM IR accordingly.
+Inc: Represents the increment operation, evaluating to LLVM IR instructions for adding 1 to a variable.
+Dec: Represents the decrement operation, evaluating to LLVM IR instructions for subtracting 1 from a variable.
+Variable: Represents variables in the AST, handling allocation, storage, and loading of values in LLVM IR.
+Assign: Handles assignment operations, storing evaluated values into variables.
+Print: Represents print statements, formatting and printing values based on their type (integer, float, string) using LLVM IR.
+Condition: Handles conditional expressions (IfThenElse), evaluating relational operations and generating LLVM IR for comparisons.
+IfThenElse: Represents if-then-else statements in the AST, branching based on evaluated conditions and executing appropriate blocks.
+Boolean: Represents boolean literals (True, False), evaluating to LLVM IR constants for boolean values.
+BooleanOp: Represents boolean operations (AND, OR), performing logical operations on boolean values and generating LLVM IR.
+BooleanNot: Represents the logical NOT operation (NOT), evaluating to LLVM IR instructions for negating boolean values.
+While: Represents while loop constructs in the AST, evaluating loop conditions and executing loop bodies repeatedly in LLVM IR.
+Intermediate Code Generation (CodeGen.py)
+init(self): Initializes the LLVM environment and prepares for code generation. It initializes LLVM bindings, targets, and printers, configures LLVM for the current platform, creates a main function in LLVM IR, and sets up an IR builder for generating LLVM instructions.
+_config_llvm(self): Configures the LLVM module by setting its name, triple (target architecture), and creating a base function main with no parameters and void return type. It also initializes an entry basic block and an IR builder associated with it.
+_create_execution_engine(self): Creates an execution engine for LLVM JIT compilation. It retrieves the target machine based on the module's triple, parses an empty assembly module, and initializes an MCJIT compiler with the target machine.
+_declare_print_function(self): Declares the printf function in LLVM IR. It defines the function signature (printf_ty) accepting a void pointer (voidptr_ty) as an argument with variable arguments (var_arg=True). The function is added to the LLVM module as printf.
+_compile_ir(self): Compiles the LLVM IR code generated so far. It finalizes the main function by appending a return void instruction, verifies the module's integrity, adds it to the execution engine, runs static constructors, and returns the compiled module.
+create_ir(self): Calls _compile_ir() to compile the LLVM IR code and returns the resulting module.
+save_ir(self, filename): Saves the LLVM IR code to a specified file. It converts the LLVM module to a string representation and writes it to the output file.
+_declare_global_string(self, name, value): Declares a global string variable in LLVM IR. It converts the string value to UTF-8 bytes, creates an LLVM constant array (str_const), declares a global variable (global_var) with internal linkage and constant initializer, and returns the global variable object.
+main.py
+Importing Modules: Imports necessary modules (Lexx, Parser, CodeGen) for lexical analysis, parsing, and code generation.
+Reading Input: Prompts the user to enter an input file name (assumed to be a .ngeb file), reads its contents, and stores it in text_input.
+Lexical Analysis: Initializes a lexer from Lexx and performs lexical analysis on text_input, generating tokens.
+Token List Creation: Iterates through the tokens generated by the lexer, printing each token for debugging purposes, and adds each token to token_list. Handles any exceptions that may occur during tokenization.
+Code Generation: Initializes a CodeGen object (codegen) for generating LLVM IR code.
+Parsing: Initializes a Parser (pg) with references to module, builder, and printf from the CodeGen object. Calls parse() method to define production rules and get_parser() method to obtain the parser. Parses the token_list to obtain parsed_program, which contains parsed statements.
+Evaluation: Iterates through parsed_program and calls eval() on each statement to evaluate and generate LLVM IR code.
+IR Code Compilation and Saving: Calls create_ir() on codegen to compile the generated LLVM IR code and save_ir() to save it to a file named "ngob.ll".
+Printing Target Triple: Prints the target triple (module.triple) set in the CodeGen object to ensure it is correctly configured.
+compile.py
+Compiles LLVM IR code (ir_filename) into either an object file (filetype='obj') or an assembly file (filetype='asm'), and optionally links it to produce an executable.
+Error Handling: Checks if the IR file exists and validates the filetype. Prints errors if the file doesn't exist or if the filetype is unsupported.
+LLC Command: Constructs an LLVM LLC command (llc_command) based on the filetype and executes it using subprocess.run(). Handles errors using subprocess.CalledProcessError.
+GCC Command (if obj): If filetype is 'obj', constructs a GCC command (gcc_command) to link the object file and create the executable. Executes it using subprocess.run() and handles errors similarly.
+Output: Prints relevant messages during the process, indicating successful generation of the assembly file or the executable.
+Main Execution: If executed as a script (__name__ == "__main__"), prompts the user to enter the desired output file type (obj or asm). Calls compile_to_executable with predefined filenames (ir_filename, output_filename) and the user-provided filetype. Prints a message if compilation fails.
+execution.py
+This file encapsulates main.py, compile.py and file execution running for easier run and compile.
