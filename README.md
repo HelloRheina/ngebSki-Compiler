@@ -124,7 +124,7 @@ Yes, we support both Windows and macOS !!
 ## ✨ Language description and test cases
 - Please check **ngebBuild.txt** for more information. We use BNF notation to define the grammar and lexical model to describe the control flow. The build also describe the parser, lexer, AST, intermediate code generator, compile and execution.
 - Please check **testCases.pdf** for information regarding test cases usage.
-- Please check **performanceAnalysis.txt** for information surrounding performance analysis and error handling.
+- Please check **performanceAnalysis.pdf** for information surrounding performance analysis and error handling.
 
 ## Compiler architecture
 ![compiler_architecture](https://github.com/user-attachments/assets/e27de7f0-6a69-47ae-a1b0-28ef55de3c73)
