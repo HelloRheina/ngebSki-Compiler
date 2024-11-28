@@ -75,12 +75,22 @@ Includes sample programs like:
 2. Navigate to the project directory:  
    ```bash
    cd NgebskiCompiler
-3. Install the requirements
+3. Set up virtual environment and Install the requirements
    ```bash
+   conda create --name ngebski python=3.12
+   conda activate ngebski
    pip install -r requirements.txt
 4. Compile and run your first Ngebski program:
    ```bash
-   python ngebski_compiler.py path/to/your_program.ngeb
+   Sample: (terminal entry by line)
+   cd ngebSki
+   python main.py
+   ./test/arithmetic1
+   #ngob.ll generated
+   python compile.py
+   #
+   
+   
 
 ## 🧪 Test Cases  
 
