@@ -117,8 +117,7 @@ Yes, we support both Windows and macOS !!
 
 ## Compiler architecture
 ![compiler_architecture](https://github.com/user-attachments/assets/e27de7f0-6a69-47ae-a1b0-28ef55de3c73)
-
-![flow](https://github.com/user-attachments/assets/bf4ed1ff-5992-4c1c-a3da-cd50f5498b55)
+![flow](https://github.com/user-attachments/assets/86c93368-0c94-4085-9306-7ff14f16e2ba)
 
 1. main.py is used as the body of the compiler for lexer, parser, AST and code generator for intermediate representation (IR file).
 2. compile.py is used for object and assembly file generators.
