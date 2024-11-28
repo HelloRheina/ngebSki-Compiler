@@ -1,6 +1,6 @@
-# 🖥️ Ngebski Programming Language Compiler 🌟  
+# 🖥️ Ngebski Programming Language Compiler (NgebLang) 🌟  
 
-**_"Ngeb"_** is an Indonesian slang word for addressing friends, and that's what the Ngebski language aims to be: your friendly, user-focused programming language. Blending elements of **C** and **Python**, Ngebski makes programming as fun as chatting with friends.  
+**_"Ngeb"_** is an Indonesian slang word for addressing friends, and that's what the Ngebski language aims to be: your friendly, user-focused programming language. Blending elements of **C** and **Python**. This is a project from our compiler principles class. We decided to make it fun by using some slang keywords.
 
 ---
 
@@ -108,6 +108,27 @@ This language is designed to feel as natural as talking to friends!
 - **Windows 10/11** 
 - **macOS** (requires adding ___chkstk_ms to the OS standard library)
 
+Yes, we support both Windows and macOS !!
 
+## ✨ Language description and test cases
+- Please check **ngebBuild.txt** for more information. We use BNF notation to define the grammar and lexical model to describe the control flow. The build also describe the parser, lexer, AST, intermediate code generator, compile and execution.
+- Please check **testCases.txt** for information regarding test cases usage.
+- Please check **performanceAnalysis.txt** for information surrounding performance analysis and error handling.
 
+## Compiler architecture
+![compiler_architecture](https://github.com/user-attachments/assets/e27de7f0-6a69-47ae-a1b0-28ef55de3c73)
+
+![flow](https://github.com/user-attachments/assets/bf4ed1ff-5992-4c1c-a3da-cd50f5498b55)
+
+1. main.py is used as the body of the compiler for lexer, parser, AST and code generator for intermediate representation (IR file).
+2. compile.py is used for object and assembly file generators.
+3. ngob.exe is the executable of the machine code.
+4. ./ngob is used to execute the file into human readable output.
+
+## 🎉 Happy Coding with Ngebski! 🎉
+
+Let us know if there is anything you would like to add or enhance ！
+
+## References
+We mainly refer to [A Python Compiler Created By marcelogdeandreade ](https://github.com/marcelogdeandrade/PythonCompiler), [Python RPLY Documentation](https://rply.readthedocs.io/en/latest/) and [LLVM Documentation](https://llvm.org/docs/)
 
