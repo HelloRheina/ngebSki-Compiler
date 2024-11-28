@@ -70,7 +70,7 @@ Includes sample programs like:
 
 1. Clone this repo:  
    ```bash  
-   git clone https://github.com/HelloRheina/Ngebski-Language-and-Compiler
+   git clone https://github.com/HelloRheina/NgebskiCompiler
 
 2. Navigate to the project directory:  
    ```bash
