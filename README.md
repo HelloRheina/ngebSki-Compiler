@@ -1,6 +1,6 @@
 # 🖥️ Ngebski Programming Language and Compiler🌟  
 
-**_"Ngeb"_** is an Indonesian slang word for addressing friends, and that's what the Ngebski language aims to be: your friendly, user-focused programming language. Blending elements of **C** and **Python**. This is a project from our compiler principles class. We decided to make it fun by using some slang keywords.
+**_"Ngeb"_** is an Indonesian slang word for addressing friends, and that's what the Ngebski language aims to be: your friendly, user-focused programming language. Blending elements of **C** and **Python**. 
 
 ---
 
